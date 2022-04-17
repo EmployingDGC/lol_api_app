@@ -7,6 +7,8 @@ def get_summoner_info(
     api_key = configs["api-key"]
     summoner = configs["summoner"]
 
+    queue_type = summoner["queue_type"].upper()
+
     watcher = rw.LolWatcher(
         api_key=api_key
     )
@@ -21,10 +23,8 @@ def get_summoner_info(
         encrypted_summoner_id=summoner_id
     )
 
-    queue_type = summoner["queue_type"]
-
     for si in summoner_info:
-        if queue_type == si["queueType"]:
+        if queue_type == si["queueType"].upper():
             return si
 
     return None
