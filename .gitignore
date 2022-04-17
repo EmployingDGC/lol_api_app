@@ -1,5 +1,5 @@
-# Volume do Docker
-Docs/Docker/opt
+# Arquivo de configuração
+config.yaml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
