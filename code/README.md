@@ -1,3 +1,0 @@
-# PASTA DE CÓDIGOS
-
-
