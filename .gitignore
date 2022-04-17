@@ -1,5 +1,8 @@
-# Volume do Docker
-Docs/Docker/opt
+# Arquivo de configuração
+config.yaml
+
+# Arquivo de saída
+pdl.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
