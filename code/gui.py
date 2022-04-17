@@ -1,3 +1,4 @@
+from pyclbr import Function
 import PySimpleGUI as sg
 
 
@@ -32,7 +33,9 @@ def get_layout(
 def loop(
     text: str,
     window_name: str,
-    window_size: tuple[int, int]
+    window_size: tuple[int, int],
+    func_button: Function,
+    **kwargs
 ):
     layout = get_layout(
         text=text
@@ -45,13 +48,16 @@ def loop(
     )
 
     while True:
-        event, values = window.read()
+        event, _ = window.read()
 
         if event == sg.WIN_CLOSED:
             break
             
         elif event == "Recarregar":
-            print(values)
+            func_button(
+                path=kwargs.get("path"),
+                text=text
+            )
 
     window.close()
 
@@ -64,5 +70,7 @@ if __name__ == "__main__":
     loop(
         text="teste",
         window_name=window_name,
-        window_size=window_size
+        window_size=window_size,
+        func_button=lambda path, text: print(path, text),
+        path="./pdl.txt"
     )
