@@ -1,6 +1,9 @@
 # Arquivo de configuração
 config.yaml
 
+# Arquivo de saída
+pdl.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
